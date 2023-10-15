@@ -1,4 +1,6 @@
 const connection = require('../config/database');
+
+
 const getAllUsers = async () => {
     const [results, fields] = await (await connection).query(
         'select * from Users'
