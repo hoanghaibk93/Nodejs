@@ -18,7 +18,7 @@ const connection = async () => {
         dbName: process.env.DB_NAME,
     }
     try {
-        await mongoose.connect('mongodb://localhost:27018', options);
+        await mongoose.connect(process.env.DB_HOST2, options);
         console.log('Connect succsessfully !!!');
     } catch (error) {
         console.log("check error: ", error);

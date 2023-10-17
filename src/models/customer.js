@@ -1,8 +1,10 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const mongoose_delete = require('mongoose-delete');
 
 // shape data
 const customerSchema = new mongoose.Schema({
-    name: {type: String,
+    name: {
+        type: String,
         required: true
     },
     address: String,
@@ -10,8 +12,23 @@ const customerSchema = new mongoose.Schema({
     email: String,
     image: String,
     description: String,
-},{timestamps: true});
-const Customer = mongoose.model('user', customerSchema);
+}, {
+    timestamps: true,
+    // statics: {
+    //     findByHoiDanIt(name) {
+    //         return this.find({ name: new RegExp(name, 'i') });
+    //     },
+    //     findByHoangHai(name) {
+    //         return this.find({ name: new RegExp(name, 'i') });
+    //     }
+    // }
+});
+
+// config xóa mềm
+// Override all methods
+customerSchema.plugin(mongoose_delete, { overrideMethods: 'all' });
+
+const Customer = mongoose.model('customer', customerSchema);
 
 
 module.exports = Customer;
