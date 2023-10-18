@@ -16,9 +16,11 @@
     "dotenv": "16.0.3",
     "ejs": "3.1.8",
     "express": "4.18.2",
-    "mysql2": "2.3.3"
+    "mysql2": "2.3.3",
+    "sequelize": "^6.33.0"
   },
   "devDependencies": {
-    "nodemon": "2.0.20"
+    "nodemon": "2.0.20",
+    "sequelize-cli": "^6.6.1"
   }
 }
